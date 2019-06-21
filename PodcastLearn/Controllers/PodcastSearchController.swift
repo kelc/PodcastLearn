@@ -23,7 +23,7 @@ class PodcastSearchController: UITableViewController, UISearchBarDelegate {
         setUpSearchBar()
         setUpTableView()
         
-        searchBar(searchController.searchBar, textDidChange: "大内密谈")
+        searchBar(searchController.searchBar, textDidChange: "津津乐道")
     }
     
     //MARK:- Setup Functions
