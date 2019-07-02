@@ -10,13 +10,50 @@ import Foundation
 import Alamofire
 import FeedKit
 
+extension NSNotification.Name {
+    static let downloadProgress = NSNotification.Name("downloadProgress")
+    static let downloadComplete = NSNotification.Name("downloadComplete")
+}
+
 class APIService {
+    typealias EPDownloadCompleteTuple = (fileUrl: String, episodeTitle: String)
+    
     //Singleton
     static let share = APIService()
     
     struct SearchResults: Decodable {
         let resultCount: Int
         let results: [Podcast]
+    }
+    
+    func downloadEpisode(episode: Episode) {
+        print("Downloading episode using Alamofire at:", episode.streamUrl)
+        
+        let downloadRequest = DownloadRequest.suggestedDownloadDestination(for: .documentDirectory, in: .userDomainMask, options: .removePreviousFile)
+        
+        AF.download(episode.streamUrl, to: downloadRequest).response { (resp) in
+            print("Get the URL:", resp.fileURL)
+            
+            let epDownloadComplete = EPDownloadCompleteTuple(fileUrl: resp.fileURL?.absoluteURL.absoluteString ?? "", episode.title)
+            NotificationCenter.default.post(name: .downloadComplete, object: epDownloadComplete, userInfo: nil)
+            
+            var downloadEpisodes = UserDefaults.standard.downloadedEpisodes()
+            guard let index = downloadEpisodes.firstIndex(where: {
+                $0.title == episode.title && $0.author == episode.author
+            }) else { return }
+            downloadEpisodes[index].fileUrl = resp.fileURL?.absoluteURL.absoluteString ?? nil
+
+            do {
+                let data = try JSONEncoder().encode(downloadEpisodes)
+                UserDefaults.standard.set(data, forKey: UserDefaults.downloadedEpisodesKey)
+            } catch let err {
+                print("Failed to encode downloaded episode with file url update:", err)
+            }
+            
+        }.downloadProgress { (progress) in
+            //print(progress.fractionCompleted)
+            NotificationCenter.default.post(name: .downloadProgress, object: nil, userInfo: ["title": episode.title, "progress": progress.fractionCompleted])
+        }
     }
     
     func fetchEpisode(withURL feedUrl: String, completionHandler: @escaping ([Episode]) -> ()) {

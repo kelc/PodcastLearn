@@ -49,19 +49,30 @@
                             </label>
                         </subviews>
                     </stackView>
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXf-1t-Vzs">
+                        <rect key="frame" x="37.5" y="80" width="57.5" height="26.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                        <color key="shadowColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <size key="shadowOffset" width="0.0" height="1"/>
+                    </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="dXf-1t-Vzs" firstAttribute="centerX" secondItem="iot-bM-qtF" secondAttribute="centerX" id="4da-GE-cMv"/>
                     <constraint firstItem="MN6-mW-o4V" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="MtP-O7-46f"/>
                     <constraint firstItem="iot-bM-qtF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="hUx-9g-bBl"/>
                     <constraint firstAttribute="trailingMargin" secondItem="MN6-mW-o4V" secondAttribute="trailing" id="uxj-Gd-btq"/>
                     <constraint firstItem="iot-bM-qtF" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="vyw-Wn-fmj"/>
                     <constraint firstItem="MN6-mW-o4V" firstAttribute="leading" secondItem="iot-bM-qtF" secondAttribute="trailing" constant="16" id="wFj-1X-MxV"/>
+                    <constraint firstItem="dXf-1t-Vzs" firstAttribute="centerY" secondItem="iot-bM-qtF" secondAttribute="centerY" id="yqT-lN-xcR"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="descriptionLabel" destination="VYe-a7-eOn" id="7yw-B2-bfn"/>
                 <outlet property="episodeImageView" destination="iot-bM-qtF" id="UDg-V4-Z8K"/>
+                <outlet property="progressLabel" destination="dXf-1t-Vzs" id="N0H-Zb-j6C"/>
                 <outlet property="pubDateLabel" destination="rTS-a0-7yw" id="7Pf-fj-mN1"/>
                 <outlet property="titleLabel" destination="tPP-Uq-yNK" id="8My-qS-hCz"/>
             </connections>

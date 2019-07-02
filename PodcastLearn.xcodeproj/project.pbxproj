@@ -26,6 +26,7 @@
 		A696918222BBDFCC002336DA /* FavoritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A696918122BBDFCC002336DA /* FavoritesController.swift */; };
 		A696918422BC773F002336DA /* FavoritePodcastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A696918322BC773F002336DA /* FavoritePodcastCell.swift */; };
 		A696918622BCD947002336DA /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A696918522BCD947002336DA /* UserDefaults.swift */; };
+		A696918822C0A942002336DA /* DownloadsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A696918722C0A942002336DA /* DownloadsController.swift */; };
 		A6A0C0FB228276D3005EEDA4 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A0C0FA228276D3005EEDA4 /* APIService.swift */; };
 		A6A0C0FE2282B28E005EEDA4 /* PodcastCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6A0C0FD2282B28E005EEDA4 /* PodcastCell.xib */; };
 		A6A0C1002282B68C005EEDA4 /* PodcastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A0C0FF2282B68C005EEDA4 /* PodcastCell.swift */; };
@@ -58,6 +59,7 @@
 		A696918122BBDFCC002336DA /* FavoritesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesController.swift; sourceTree = "<group>"; };
 		A696918322BC773F002336DA /* FavoritePodcastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePodcastCell.swift; sourceTree = "<group>"; };
 		A696918522BCD947002336DA /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		A696918722C0A942002336DA /* DownloadsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsController.swift; sourceTree = "<group>"; };
 		A6A0C0FA228276D3005EEDA4 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		A6A0C0FD2282B28E005EEDA4 /* PodcastCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PodcastCell.xib; sourceTree = "<group>"; };
 		A6A0C0FF2282B68C005EEDA4 /* PodcastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastCell.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				A641E6592281795A005D35DA /* PodcastSearchController.swift */,
 				A63CBE6422847B5100015A4B /* EpisodeController.swift */,
 				A696918122BBDFCC002336DA /* FavoritesController.swift */,
+				A696918722C0A942002336DA /* DownloadsController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				A673C655228AA32E0096DACE /* String.swift in Sources */,
 				A6EF83D7229B8B4D00BA1007 /* CMTime.swift in Sources */,
 				A641E64722813838005D35DA /* ViewController.swift in Sources */,
+				A696918822C0A942002336DA /* DownloadsController.swift in Sources */,
 				A641E64522813838005D35DA /* AppDelegate.swift in Sources */,
 				A641E65722813920005D35DA /* MainTabBarController.swift in Sources */,
 				A6A0C0FB228276D3005EEDA4 /* APIService.swift in Sources */,

@@ -46,6 +46,7 @@ class FavoritesController: UICollectionViewController, UICollectionViewDelegateF
         
         alertController.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { (_) in
             //Remove podcast
+            UserDefaults.standard.deletePodcast(podcast: self.podcasts[selectedIndexPath.item])
             self.podcasts.remove(at: selectedIndexPath.item)
             self.collectionView.deleteItems(at: [selectedIndexPath])
         }))
@@ -53,11 +54,6 @@ class FavoritesController: UICollectionViewController, UICollectionViewDelegateF
         
         present(alertController, animated: true)
     }
-    
-    //MARK:- UICollectionView Delegate / Spacing Methods
-//    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-//        return 4
-//    }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let episodeController = EpisodeController()
